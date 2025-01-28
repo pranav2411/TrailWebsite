@@ -1,0 +1,310 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheLotusInfosys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font-face for Benguiat Bold */
+        @font-face {
+            font-family: 'Benguiat Bold';
+            src: url('path/to/Benguiat-Bold.woff') format('woff'),
+                 url('path/to/Benguiat-Bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideInDown 1s;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            animation: fadeInLeft 1s;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            animation: fadeInRight 1s;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .navbar ul li a:hover, .navbar ul li a.active {
+            color: #00d8ff;
+        }
+        .navbar ul li a.cloud {
+            color: #00d8ff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideInDown 1s;
+            transform: translateX(-40px); /* Shift the navbar to the left */
+}
+
+        .hero {
+            height: 100vh;
+            background: url('file:///C:/Users/HP/Downloads/pexels-nickcollins-1293120.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+            padding-top: 80px;
+            position: relative;
+            cursor: pointer;
+            transition: background 1s ease-in-out;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: transform 1s ease, font-size 1s ease, opacity 1s ease-in-out;
+            color: black;
+            font-family: 'Benguiat Bold', serif;
+            opacity: 1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            transition: opacity 1s ease-in-out;
+            color: black;
+            opacity: 1;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease-in-out;
+        }
+
+        .buttons button {
+            background-color: #00d8ff;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #009cc7;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TheLotusInfosys</div>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Cloud</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+    </nav>
+    <section class="hero" onclick="disperseOnClick()">
+        <div>
+            <h1>THE LOTUS INFOSYS</h1>
+            <h1>Welcome to Our Website</h1>
+        </div>
+    </section>
+
+    <div class="buttons" id="buttonContainer">
+        <button>Cloud Services</button>
+        <button>Desktop Accessories</button>
+        <button>Laptop Accessories</button>
+        <button>Laptop Parts</button>
+        <button>PC Build</button>
+        <button>Tally Services</button>
+    </div>
+
+    <script>
+        let hasTransitioned = false;
+
+        function disperseOnClick() {
+            if (hasTransitioned) return; // Exit if the transition has already occurred
+
+            const heroSection = document.querySelector('.hero');
+            const headings = document.querySelectorAll('.hero h1');
+            
+            // Hide the text immediately before the transition
+            headings.forEach(h => {
+                h.style.opacity = '0'; // Hide text by setting opacity to 0
+            });
+
+            // Preload the new background image
+            const newBackground = new Image();
+            newBackground.src = "file:///C:/Users/HP/Downloads/pexels-padrinan-1111367.jpg"; // Update this path to your image
+
+            // When the new background image is fully loaded, change the background
+            newBackground.onload = () => {
+                // Apply background transition
+                heroSection.style.backgroundImage = `url('${newBackground.src}')`;
+
+                // Activate the smooth fade for the background
+                const heroOverlay = heroSection.querySelector('::before');
+                heroSection.style.setProperty('--background-opacity', '1'); // Set opacity for smooth fade-in
+
+                // Now fade in the text and transform after the background has transitioned
+                setTimeout(() => {
+                    headings.forEach(h => {
+                        h.style.transition = 'opacity 1s ease-in-out, transform 1s ease-in-out'; // Smooth fade-in and transform
+                        h.style.opacity = '1'; // Text becomes visible
+                        h.style.transform = "translateX(-322px) translateY(-40px)"; // Move and resize text
+                        h.style.fontSize = "36px";  // Smaller font size
+                    });
+
+                    // Show the buttons after the background and text transition
+                     const buttonContainer = document.getElementById('buttonContainer');
+
+            buttonContainer.style.transition = 'opacity 1s ease-in-out'; // Smooth transition for opacity
+            buttonContainer.style.opacity = '1'; // Make buttons visible
+            buttonContainer.style.top = '30%';
+            buttonContainer.style.right = '80';
+
+            // Optionally add more styles or transformations for buttons here
+            buttonContainer.style.transform += 'scale(1)'; // Optionally scale buttons up to full size
+        }, 1000); // Wait for the background transition to complete
+            };
+            // Set the flag to prevent further transitions
+            hasTransitioned = true;
+        }
+    </script>
+
+</body>
+</html>
